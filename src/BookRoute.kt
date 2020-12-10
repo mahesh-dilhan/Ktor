@@ -7,9 +7,9 @@ import io.ktor.routing.get
 import org.kodein.di.instance
 import org.kodein.di.ktor.di
 
-fun Route.findBooks() {
+fun Route.books() {
     val bookService by di().instance<BookService>()
-    get("findBooks") {
+    get("books") {
         val books = bookService.getAllBooks()
         call.respond(books)
     }
